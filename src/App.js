@@ -12,10 +12,10 @@ function App() {
         <Search />
       </Grid.Row>
       <Grid.Row columns={2}>
-        <Grid.Column>
+        <Grid.Column width={12}>
           <Results />
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column width={4}>
           <Nominations />
         </Grid.Column>
       </Grid.Row>

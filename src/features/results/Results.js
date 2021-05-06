@@ -10,7 +10,7 @@ export function Results() {
     return (
         <Grid.Row centered>
             {results.map((item, i) => {
-                return <Grid.Column width={4} key={i}>
+                return <Grid.Column width={3} key={i}>
                     <p>Title: {item.title}</p>
                     <p>Released: {item.year}</p>
                     {item.poster !== "N/A" ? (<img src={item.poster} alt='movie poster'></img>):(<></>)}
