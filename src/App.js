@@ -1,18 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Search } from './features/search/Search';
 import { Results } from './features/results/Results';
+import { Nominations } from './features/nominations/Nominations';
+import { Grid } from 'semantic-ui-react';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <Grid centered stackable>
+      <Grid.Row centered>
         <Search />
-        <Results />
-      </header>
-    </div>
+      </Grid.Row>
+      <Grid.Row columns={2}>
+        <Grid.Column>
+          <Results />
+        </Grid.Column>
+        <Grid.Column>
+          <Nominations />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 }
 
