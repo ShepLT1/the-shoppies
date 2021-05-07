@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Grid, Card, Image, Button } from 'semantic-ui-react';
+import { Grid, Card, Image, Button, Header } from 'semantic-ui-react';
 import { getResults } from './ResultSlice';
 import { getNominations, updateNominations } from '../nominations/NominationSlice';
 import moviePlaceholder from '../../movie-placeholder.jpg';
+import styles from './results.module.css';
 
 export function Results() {
 
@@ -31,25 +32,32 @@ export function Results() {
     }
 
     return (
-        <Grid.Row centered>
-            {results.map((item, i) => {
-                return <Grid.Column width={3} key={i}>
-                    <Card>
-                        {item.poster !== "N/A" ? (<Image src={item.poster} wrapped ui={false} />):(<Image src={moviePlaceholder} wrapped ui={false} />)}
-                        <Card.Content>
-                        <Card.Header>{item.title}</Card.Header>
-                        <Card.Meta>
-                            <span className='date'>{item.year}</span>
-                        </Card.Meta>
-                        {disableButton(item) === true ? (
-                            <Button disabled data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
-                        ):(
-                            <Button data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
-                        )}
-                        </Card.Content>
-                    </Card>
-                </Grid.Column>
-            })}
-        </Grid.Row>
+        <Grid id={styles.resultsGrid}>
+            <Grid.Row>
+                <Header as='h3' id={styles.resultHeader}>Search Results</Header>
+            </Grid.Row>
+            <Grid.Row centered>
+                {results.map((item, i) => {
+                    return <Grid.Column key={i} className={styles.resultsCol} mobile={16} tablet={8} computer={4}>
+                        <Card className={styles.resultsCard}>
+                            {item.poster !== "N/A" ? (<Image src={item.poster} wrapped ui={false} />):(<Image src={moviePlaceholder} wrapped ui={false} />)}
+                            <Card.Content>
+                                <Card.Header>{item.title}</Card.Header>
+                                <Card.Meta>
+                                    <span className='date'>{item.year}</span>
+                                </Card.Meta>
+                            </Card.Content>
+                            <Card.Content className={styles.nomBtnContainer}>
+                            {disableButton(item) === true ? (
+                                <Button disabled className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
+                            ):(
+                                <Button className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
+                            )}
+                            </Card.Content>
+                        </Card>
+                    </Grid.Column>
+                })}
+            </Grid.Row>
+        </Grid>
     )
 }

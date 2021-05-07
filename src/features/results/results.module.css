@@ -1,0 +1,22 @@
+.resultsCol {
+    margin-bottom: 35px !important;
+}
+
+#resultHeader {
+    margin-left: 14px;
+}
+
+.resultsCard {
+    height: 100%;
+}
+
+.nomBtnContainer {
+    border: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.nomBtn {
+    margin: 0 !important;
+}

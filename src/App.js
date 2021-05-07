@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <Grid centered stackable>
+    <Grid centered stackable id='grid'>
       <Grid.Row centered>
         <Search />
       </Grid.Row>
