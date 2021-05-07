@@ -4,6 +4,9 @@
 
 #resultHeader {
     margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .resultsCard {

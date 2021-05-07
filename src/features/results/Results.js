@@ -34,7 +34,10 @@ export function Results() {
     return (
         <Grid id={styles.resultsGrid}>
             <Grid.Row>
-                <Header as='h3' id={styles.resultHeader}>Search Results</Header>
+                <Header as='h3' id={styles.resultHeader}>
+                    Search Results
+                    <div className='titleLine'></div>
+                </Header>
             </Grid.Row>
             <Grid.Row centered>
                 {results.map((item, i) => {

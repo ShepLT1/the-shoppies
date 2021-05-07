@@ -1,0 +1,14 @@
+.nomItem {
+    display: flex !important;
+    flex-wrap: nowrap;
+}
+
+#nomColumn {
+    max-width: 200px;
+}
+
+#nomHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

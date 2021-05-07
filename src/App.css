@@ -31,6 +31,12 @@
   margin-right: 16px;
 }
 
+.titleLine {
+  width: 75px;
+  border-top: 2px solid rgb(17, 180, 166);
+  margin-top: 2.5px;
+}
+
 @keyframes App-logo-float {
   0% {
     transform: translateY(0);
