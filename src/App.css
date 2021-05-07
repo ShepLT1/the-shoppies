@@ -27,14 +27,29 @@
 }
 
 #grid {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin: 16px;
+}
+
+#searchContainer {
+  justify-content: left;
 }
 
 .titleLine {
   width: 75px;
   border-top: 2px solid rgb(17, 180, 166);
-  margin-top: 2.5px;
+  margin-top: 4px;
+}
+
+#pageHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pageHeadLine {
+  width: 125px;
+  border-top: 2px solid rgb(17, 180, 166);
+  margin-top: 5px;
 }
 
 @keyframes App-logo-float {

@@ -32,8 +32,8 @@ export function Results() {
     }
 
     return (
-        <Grid id={styles.resultsGrid}>
-            <Grid.Row>
+        <Grid centered>
+            <Grid.Row centered>
                 <Header as='h3' id={styles.resultHeader}>
                     Search Results
                     <div className='titleLine'></div>

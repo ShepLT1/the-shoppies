@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateSearch, getSearch } from './SearchSlice';
 import { updateResults } from '../results/ResultSlice';
 import axios from 'axios';
-import { Form, Grid, Icon } from 'semantic-ui-react'
+import { Form, Grid, Icon, Header } from 'semantic-ui-react'
+import styles from './search.module.css';
 
 export function Search() {
 
@@ -39,14 +40,19 @@ export function Search() {
     }
 
     return (
-        <Grid.Column width={4}>
-            <Form onSubmit={handleSearch}>
-                <Form.Input
-                    icon={<Icon name='search' inverted circular link onClick={handleSearch}/>}
-                    placeholder='Search...'
-                    onChange={(e) => {dispatch(updateSearch(e.target.value))}}
-                />
-            </Form>
-        </Grid.Column>
+        <Grid id={styles.searchGrid}>
+            <Header as='h3' id={styles.searchHeader}>Search Movie Titles</Header>
+            <Grid.Row id={styles.searchRow}>
+                <Grid.Column width={12}>
+                    <Form onSubmit={handleSearch}>
+                        <Form.Input
+                            icon={<Icon name='search' inverted circular link onClick={handleSearch}/>}
+                            placeholder='Search...'
+                            onChange={(e) => {dispatch(updateSearch(e.target.value))}}
+                        />
+                    </Form>
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
     )
 }
