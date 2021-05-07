@@ -1,6 +1,10 @@
 .nomItem {
     display: flex !important;
     flex-wrap: nowrap;
+    flex-direction: column;
+    padding-bottom: 20px !important;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(17, 180, 166);
 }
 
 #nomColumn {
@@ -11,4 +15,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.nomImgTextContainer {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.nomTextContainer {
+    padding-left: 10px;
 }

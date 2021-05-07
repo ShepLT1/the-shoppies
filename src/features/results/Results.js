@@ -13,11 +13,12 @@ export function Results() {
     const dispatch = useDispatch();
 
     const handleNominate = (target) => {
+        const nomArr = [...nominations]
         const title = target.getAttribute('data-title');
         const year = target.getAttribute('data-year');
         const poster = target.getAttribute('data-poster');
-        const nomArr = [...nominations]
-        nomArr.push({title: title, year: year, poster: poster})
+        const id = nomArr.length;
+        nomArr.push({id: id, title: title, year: year, poster: poster})
         dispatch(updateNominations(nomArr))
         console.log(title,year,poster)
     }
