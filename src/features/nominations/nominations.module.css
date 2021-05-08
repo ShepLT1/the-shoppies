@@ -8,7 +8,7 @@
 }
 
 #nomColumn {
-    max-width: 200px;
+    max-width: 250px;
 }
 
 #nomHeader {
@@ -24,4 +24,10 @@
 
 .nomTextContainer {
     padding-left: 10px;
+}
+
+#nomBanner {
+    margin-left: 14px;
+    margin-right: 14px;
+    padding: 14px; 
 }

@@ -16,10 +16,10 @@ function App() {
         <Search />
       </Grid.Row>
       <Grid.Row columns={2}>
-        <Grid.Column width={12}>
+        <Grid.Column width={11}>
           <Results />
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column width={5}>
           <Nominations />
         </Grid.Column>
       </Grid.Row>
