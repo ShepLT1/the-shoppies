@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getNominations, updateNominations } from './NominationSlice';
-import { Grid, List, Image, Header, Button, Message } from 'semantic-ui-react';
+import { Grid, List, Image, Header, Button } from 'semantic-ui-react';
 import styles from './nominations.module.css';
 import '../../App.css'
 
@@ -19,14 +19,6 @@ export function Nominations() {
 
     return (
         <Grid centered>
-            {nominations.length === 5 ? (
-                <Message warning id={styles.nomBanner}>
-                    <Message.Header>Way to go! You've nominated 5 movies!</Message.Header>
-                    <p>Max limit reached</p>
-                </Message>
-            ):(
-                <></>
-            )}
             <Grid.Row centered vertical>
                 <Header as='h3' id={styles.nomHeader}>
                     Nominations

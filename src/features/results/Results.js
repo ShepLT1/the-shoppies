@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Grid, Card, Image, Button, Header } from 'semantic-ui-react';
+import { Grid, Card, Image, Button, Header, Message, Icon } from 'semantic-ui-react';
 import { getResults } from './ResultSlice';
 import { getNominations, updateNominations } from '../nominations/NominationSlice';
 import moviePlaceholder from '../../movie-placeholder.jpg';
@@ -34,6 +34,17 @@ export function Results() {
 
     return (
         <Grid centered>
+            {nominations.length === 5 ? (
+                <Message warning id={styles.nomBanner} icon>
+                    <Icon name='trophy' />
+                    <Message.Content id={styles.nomBannerText}>
+                        <Message.Header>Way to go! You've nominated 5 movies!</Message.Header>
+                        <p>Max limit reached</p>
+                    </Message.Content>
+                </Message>
+            ):(
+                <></>
+            )}
             <Grid.Row centered>
                 <Header as='h3' id={styles.resultHeader}>
                     Search Results

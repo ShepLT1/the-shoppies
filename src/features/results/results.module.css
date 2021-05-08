@@ -24,3 +24,12 @@
 .nomBtn {
     margin: 0 !important;
 }
+
+#nomBanner {
+    max-width: 396px;
+    margin: 14px;
+}
+
+#nomBannerText {
+    text-align: left;
+}
