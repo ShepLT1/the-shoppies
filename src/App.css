@@ -1,5 +1,7 @@
 #grid {
-  margin: 35px 16px;
+  margin: 0 16px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 #searchContainer {
