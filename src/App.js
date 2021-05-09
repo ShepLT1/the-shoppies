@@ -1,11 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Search } from './features/search/Search';
 import { Results } from './features/results/Results';
 import { Nominations } from './features/nominations/Nominations';
+import { updateNominations } from './features/nominations/NominationSlice';
 import { Grid, Header } from 'semantic-ui-react';
 import './App.css';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  const localNoms = JSON.parse(localStorage.getItem('nominations'));
+  dispatch(updateNominations(localNoms));
+
   return (
     <Grid centered stackable id='grid'>
       <Header id='pageHeader' as='h1'>

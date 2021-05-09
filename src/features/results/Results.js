@@ -17,10 +17,9 @@ export function Results() {
         const title = target.getAttribute('data-title');
         const year = target.getAttribute('data-year');
         const poster = target.getAttribute('data-poster');
-        const id = nomArr.length;
-        nomArr.push({id: id, title: title, year: year, poster: poster})
+        nomArr.push({title: title, year: year, poster: poster})
+        localStorage.setItem('nominations', JSON.stringify(nomArr))
         dispatch(updateNominations(nomArr))
-        console.log(title,year,poster)
     }
 
     const disableButton = (movie) => {

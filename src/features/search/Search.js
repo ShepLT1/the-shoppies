@@ -20,7 +20,6 @@ export function Search() {
                 type: 'movie'
             }
         }).then((data) => {
-            console.log(data)
             let index = 0;
             const updatedResultArr = [];
             let results = data.data.Search

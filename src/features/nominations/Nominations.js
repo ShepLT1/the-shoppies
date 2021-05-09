@@ -14,12 +14,13 @@ export function Nominations() {
         const id = target.getAttribute('data-id');
         const newNomsArr = [...nominations]
         newNomsArr.splice(id, 1)
+        localStorage.setItem('nominations', JSON.stringify(newNomsArr))
         dispatch(updateNominations(newNomsArr));
     }
 
     return (
         <Grid centered>
-            <Grid.Row centered vertical>
+            <Grid.Row centered>
                 <Header as='h3' id={styles.nomHeader}>
                     Nominations
                     <div className='titleLine'></div>
