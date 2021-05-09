@@ -29,7 +29,7 @@ export function Nominations() {
             <Grid.Row centered>
                 <Grid.Column id={styles.nomColumn}>
                     <List>
-                        {nominations.map((item, i) => {
+                        {nominations ? (nominations.map((item, i) => {
                             return <List.Item key={i} className={styles.nomItem}>
                                 <div className={styles.nomImgTextContainer}>
                             <Image src={item.poster} size='tiny' rounded />
@@ -44,7 +44,7 @@ export function Nominations() {
                                 Remove
                             </Button>
                             </List.Item>
-                        })}
+                        })):(<></>)}
                     </List>
                 </Grid.Column>
             </Grid.Row>

@@ -14,7 +14,10 @@ export function Results() {
 
     // updates nominations with nominated movie, stores updated nominations array in local storage
     const handleNominate = (target) => {
-        const nomArr = [...nominations]
+        let nomArr = []
+        if (nominations !== null) {
+            nomArr = [...nominations]
+        }
         const title = target.getAttribute('data-title');
         const year = target.getAttribute('data-year');
         const poster = target.getAttribute('data-poster');
@@ -25,9 +28,11 @@ export function Results() {
 
     // returns true if nominate button should be disabled
     const disableButton = (movie) => {
-        for (let i = 0; i < nominations.length; i++) {
-            if (nominations[i].title === movie.title && nominations[i].year === movie.year && nominations[i].poster === movie.poster) {
-                return true
+        if (nominations) {
+            for (let i = 0; i < nominations.length; i++) {
+                if (nominations[i].title === movie.title && nominations[i].year === movie.year && nominations[i].poster === movie.poster) {
+                    return true
+                }
             }
         }
         return false
@@ -35,7 +40,7 @@ export function Results() {
 
     return (
         <Grid centered>
-            {nominations.length === 5 ? (
+            {nominations ? (nominations.length === 5 ? (
                 <Message warning id={styles.nomBanner} icon>
                     <Icon name='trophy' />
                     <Message.Content id={styles.nomBannerText}>
@@ -45,7 +50,7 @@ export function Results() {
                 </Message>
             ):(
                 <></>
-            )}
+            )):(<></>)}
             <Grid.Row centered>
                 <Header as='h3' id={styles.resultHeader}>
                     Search Results
@@ -64,9 +69,11 @@ export function Results() {
                                 </Card.Meta>
                             </Card.Content>
                             <Card.Content className={styles.nomBtnContainer}>
-                            {disableButton(item) === true || nominations.length === 5 ? (
+                            {nominations ? (disableButton(item) === true || nominations.length === 5 ? (
                                 <Button color='black' disabled className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
                             ):(
+                                <Button color='black' className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
+                            )):(
                                 <Button color='black' className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
                             )}
                             </Card.Content>
