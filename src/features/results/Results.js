@@ -12,6 +12,7 @@ export function Results() {
     const nominations = useSelector(getNominations);
     const dispatch = useDispatch();
 
+    // updates nominations with nominated movie, stores updated nominations array in local storage
     const handleNominate = (target) => {
         const nomArr = [...nominations]
         const title = target.getAttribute('data-title');
@@ -22,6 +23,7 @@ export function Results() {
         dispatch(updateNominations(nomArr))
     }
 
+    // returns true if nominate button should be disabled
     const disableButton = (movie) => {
         for (let i = 0; i < nominations.length; i++) {
             if (nominations[i].title === movie.title && nominations[i].year === movie.year && nominations[i].poster === movie.poster) {

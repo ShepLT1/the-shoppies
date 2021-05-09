@@ -11,8 +11,10 @@ export function Search() {
     const search = useSelector(getSearch);
     const dispatch = useDispatch();
 
+    // free api key, no need to hide in .env file
     const apiKey = '71fc9876'
 
+    // searches OMDB for movie based on user input & updates results
     const handleSearch = (e) => {
         e.preventDefault();
         axios.get(`http://www.omdbapi.com/?s=${search}&apikey=${apiKey}`, {

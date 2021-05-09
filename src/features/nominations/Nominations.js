@@ -9,6 +9,7 @@ export function Nominations() {
     const nominations = useSelector(getNominations);
     const dispatch = useDispatch();
 
+    // removes nomination from redux store & local storage
     const handleRemoval = (target) => {
         const id = target.getAttribute('data-id');
         const newNomsArr = [...nominations]

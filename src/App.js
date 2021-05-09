@@ -11,6 +11,7 @@ function App() {
 
   const dispatch = useDispatch();
 
+  // retrieves stored nominations on page load
   const localNoms = JSON.parse(localStorage.getItem('nominations'));
   dispatch(updateNominations(localNoms));
 
