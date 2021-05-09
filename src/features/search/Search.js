@@ -17,7 +17,7 @@ export function Search() {
     // searches OMDB for movie based on user input & updates results
     const handleSearch = (e) => {
         e.preventDefault();
-        axios.get(`http://www.omdbapi.com/?s=${search}&apikey=${apiKey}`, {
+        axios.get(`https://www.omdbapi.com/?s=${search}&apikey=${apiKey}`, {
             params: {
                 type: 'movie'
             }
