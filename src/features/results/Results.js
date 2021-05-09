@@ -63,9 +63,9 @@ export function Results() {
                             </Card.Content>
                             <Card.Content className={styles.nomBtnContainer}>
                             {disableButton(item) === true || nominations.length === 5 ? (
-                                <Button disabled className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
+                                <Button color='black' disabled className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
                             ):(
-                                <Button className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
+                                <Button color='black' className={styles.nomBtn} data-title={item.title} data-year={item.year} data-poster={item.poster} onClick={(e) =>{handleNominate(e.target)}}>Nominate</Button>
                             )}
                             </Card.Content>
                         </Card>

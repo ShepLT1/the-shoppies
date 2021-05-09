@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getNominations, updateNominations } from './NominationSlice';
 import { Grid, List, Image, Header, Button } from 'semantic-ui-react';
 import styles from './nominations.module.css';
-import '../../App.css'
 
 export function Nominations() {
 
@@ -40,7 +39,7 @@ export function Nominations() {
                                 </List.Description>
                             </List.Content>
                             </div>
-                            <Button data-id={i} onClick={(e) => {handleRemoval(e.target)}}>
+                            <Button color='black' data-id={i} onClick={(e) => {handleRemoval(e.target)}}>
                                 Remove
                             </Button>
                             </List.Item>

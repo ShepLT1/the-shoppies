@@ -42,9 +42,11 @@ export function Search() {
         <Grid id={styles.searchGrid}>
             <Header as='h3' id={styles.searchHeader}>Search Movie Titles</Header>
             <Grid.Row id={styles.searchRow}>
-                <Grid.Column width={12}>
+                <Grid.Column width={12} id={styles.searchCol}>
                     <Form onSubmit={handleSearch}>
                         <Form.Input
+                            id={styles.searchBar}
+                            autoComplete='off'
                             icon={<Icon name='search' inverted circular link onClick={handleSearch}/>}
                             placeholder='Search...'
                             onChange={(e) => {dispatch(updateSearch(e.target.value))}}

@@ -9,3 +9,17 @@
 #searchHeader {
     margin-bottom: 5px;
 }
+
+#searchBar, #searchBar:focus {
+    background-color: rgb(17, 22, 27);
+    color: rgb(233, 233, 233);
+    border: 1px solid #95BF47;
+}
+
+@media screen and (max-width: 767px) {
+    #searchGrid {
+        margin: 14px;
+        display: flex;
+        justify-content: center
+    }
+}

@@ -1,5 +1,5 @@
 #grid {
-  margin: 16px;
+  margin: 35px 16px;
 }
 
 #searchContainer {
@@ -8,7 +8,8 @@
 
 .titleLine {
   width: 75px;
-  border-top: 2px solid rgb(17, 180, 166);
+  /* border-top: 2px solid rgb(17, 180, 166); */
+  border-top: 2px solid #95BF47;
   margin-top: 4px;
 }
 
@@ -20,6 +21,20 @@
 
 #pageHeadLine {
   width: 125px;
-  border-top: 2px solid rgb(17, 180, 166);
+  border-top: 2px solid #95BF47;
   margin-top: 5px;
+}
+
+h1, h2, h3, h4, h5, h6, p, div, button {
+  color: rgb(233, 233, 233) !important;
+}
+
+@media screen and (max-width: 767px) {
+  #searchContainer {
+    justify-content: center;
+  }
+
+  #grid {
+    padding-bottom: 50px;
+  }
 }
