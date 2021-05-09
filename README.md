@@ -12,7 +12,9 @@ Shopify challenge: Movie awards for entrepreneurs. Utilizes React Redux.
 - Preserves list of nominated movies across multiple sessions
 - Responsive design with stylish dark theme
 
-## Preview
-![the-shoppies](./src/preview.png)
+## Deployed Application
 
 **[Visit the Deployed Site](https://sheplt1.github.io/the-shoppies/)**
+
+## Preview
+![the-shoppies](./src/preview.png)
